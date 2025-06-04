@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pet-Friendly City Campaign</title>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2&family=Roboto:wght@300;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Baloo 2', cursive;
+      background-color: #fffaf0;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #ffb347;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 10px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #333;
+    }
+
+    .hero {
+      background: url('https://images.unsplash.com/photo-1583337130417-3346a1eaa5c0') no-repeat center center/cover;
+      height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 0 20px;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.4);
+      z-index: 0;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      z-index: 1;
+      animation: fadeIn 2s ease-in;
+    }
+
+    .hero p {
+      font-size: 1.5rem;
+      margin: 20px 0;
+      z-index: 1;
+    }
+
+    .cta-buttons {
+      z-index: 1;
+    }
+
+    .cta-buttons button {
+      background-color: #ff6f61;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      margin: 10px;
+      font-size: 1.1rem;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .cta-buttons button:hover {
+      background-color: #ff3f3f;
+    }
+
+    section {
+      padding: 50px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .volunteer-form {
+      background: #fff0f5;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    .volunteer-form h2 {
+      margin-bottom: 20px;
+    }
+
+    .volunteer-form input, select {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .volunteer-form button {
+      background-color: #ffa07a;
+      color: #fff;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .volunteer-form button:hover {
+      background-color: #ff7f50;
+    }
+
+    .stories {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .story {
+      background: #e6f9ff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .story:hover {
+      transform: translateY(-5px);
+    }
+
+    .story h3 {
+      margin-bottom: 10px;
+    }
+
+    footer {
+      background-color: #734f1d;
+      text-align: center;
+      padding: 20px;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .carousel-container {
+  overflow: hidden;
+  margin-top: 30px;
+  background: #fffef0;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.carousel {
+  display: flex;
+  gap: 20px;
+  animation: scroll 20s linear infinite;
+}
+
+.pet-card {
+  min-width: 200px;
+  background: #f0f9ff;
+  border-radius: 15px;
+  text-align: center;
+  padding: 15px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.pet-card:hover {
+  transform: scale(1.05);
+}
+
+
+
+@keyframes scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h2>🐾 Pet-Friendly City 🏙️</h2>
+    <nav>
+      <a href="">Home</a>
+      <a href="">About</a>
+      <a href="">Volunteer</a>
+      <a href="">Impact Stories</a>
+      <a href="">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>“Making Cities Paw-some!” 🐶✨</h1>
+    <p>Join us in creating a safer, friendlier city for every furry friend.</p>
+    <div class="cta-buttons">
+      <button>Join the Movement</button>
+      <button>Volunteer Now</button>
+      <button>Learn More</button>
+    </div>
+  </section>
+
+  <section class="volunteer-form">
+    <h2>🐾 Be a Hero. Volunteer Today!</h2>
+    <form>
+      <input type="text" placeholder="Full Name" required>
+      <input type="text" placeholder="City" required>
+      <select required>
+        <option value="">Select Role Preference</option>
+        <option>Dog Feeder</option>
+        <option>Medical Aid Volunteer</option>
+        <option>Event Organizer</option>
+      </select>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <section>
+    <h2>🌟 Impact Stories</h2>
+    <div class="stories">
+      <div class="story">
+        <h3>🐕 Rocky’s Rescue</h3>
+        <p>From a busy highway to a warm home—Rocky’s journey touched hearts citywide.</p>
+      </div>
+      <div class="story">
+        <h3>🐾 Paws & Smiles</h3>
+        <p>Volunteers helped treat 20+ injured pups last month. Real change, real impact!</p>
+      </div>
+      <div class="story">
+        <h3>🐶 Hope for Bruno</h3>
+        <p>Bruno was adopted after a long recovery, thanks to YOU!</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>🐕 Pet Adoption</h2>
+    <div class="carousel-container">
+      <div class="carousel" id="carousel">
+        <div class="pet-card">
+          
+          <h4>🐾 Milo</h4>
+          <p>3 months old | Playful & Cuddly</p>
+        </div>
+        <div class="pet-card">
+          <h4>🐾 Luna</h4>
+          <p>2 months old | Curious & Cute</p>
+        </div>
+        <div class="pet-card">
+          <h4>🐾 Bruno</h4>
+          <p>5 months old | Loyal & Friendly</p>
+        </div>
+        <div class="pet-card">
+          <h4>🐾 Daisy</h4>
+          <p>1 year old | Calm & Affectionate</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Made with ❤️ by Interns at CollegeTips.in | #PetFriendlyCity 🌆🐾
+  </footer>
+
+</body>
+</html>
